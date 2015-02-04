@@ -3,8 +3,8 @@
   <ul>
     <% @cart.line_items.each do |item| %>
       <li><%= item.product.title %></li>
-      <li><%= sprintf("$%0.02f",item.product.price) %></li>
-      <li><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <li><%= sprintf("$%0.02f",item.product.price) %>
+          <%= link_to 'Delete from cart', item, method: :delete, data: { confirm: 'Are you sure?' } %></li><br>
     <% end %>
     
   </ul>
