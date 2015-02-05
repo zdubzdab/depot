@@ -1,13 +1,14 @@
 <h2>Your Pragmatic Cart</h2>
 <% if @cart.line_items.any? %>
-  <ul>
-    <% @cart.line_items.each do |item| %>
-      <li><%= item.product.title %></li>
-      <li><%= sprintf("$%0.02f",item.product.price) %>
-          <%= link_to 'Delete from cart', item, method: :delete, data: { confirm: 'Are you sure?' } %></li><br>
-    <% end %>
+  <table>
+    <%= render(cart.line_items) %>
     
-  </ul>
+    <tr class="total_line">
+      <td>Total</td>
+      <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+  </table>
+    <td><%= button_to 'Empy cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
 <% else %>
   <h2>is empty.</h2>
 <% end %>

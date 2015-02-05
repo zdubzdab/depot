@@ -1,0 +1,5 @@
+<tr>
+  <td><%= line_item.product.title %></td>
+  <td><%= sprintf("$%0.02f",line_item.product.price) %>
+      <%= button_to 'Delete from cart', line_item_path(line_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
