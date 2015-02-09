@@ -1,6 +1,6 @@
 <h2>Your Pragmatic Cart</h2>
 <% if @cart.line_items.any? %>
-  <table>
+  <table class="cart_table">
     <%= render(cart.line_items) %>
     
     <tr class="total_line">
@@ -8,7 +8,8 @@
       <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
     </tr>
   </table>
-    <td><%= button_to 'Empy cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+    <%= button_to "Checkout", new_order_path, method: :get %>
+    <%= button_to 'Empy cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %><br>
 <% else %>
   <h2>is empty.</h2>
 <% end %>
