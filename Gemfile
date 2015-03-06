@@ -34,3 +34,11 @@ group :doc do
 end
 
 gem 'devise'
+
+  group :development do
+    gem 'web-console'
+  end
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
