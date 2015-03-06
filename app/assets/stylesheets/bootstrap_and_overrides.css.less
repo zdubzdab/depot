@@ -1,44 +1,107 @@
 @import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
 
-// Set the correct sprite paths
-@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
-@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+header {
+  margin-bottom: 0px;
+    .navbar-inner {
+        background: #FF8533;
+        font-weight: bold;
+          .nav > li {
+            font-size: 20px;
+            color: orange;
+            padding-top: 12px;
+          }
+    }
+}
 
-// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
-@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
-@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
-@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
-@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+footer {
+  margin-top: 30px;
+    .footer_text {
+      margin-top: -15px;
+      font-size: 16px;
+      position:relative; left:85%;
+    }
+}
 
-// Font Awesome
-@import "fontawesome/font-awesome";
-
-// Glyphicons
-//@import "twitter/bootstrap/sprites.less";
-
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
-  .navbar-inner {
-  background: black;
-
-  color: black;
-  }
-  .navbar-custom {
-  background: black;
-  color: black;
+#columns {
+  background: #FFAD5C;
+  margin-top: -21px;
+  margin-bottom: -34px;
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
   }
 
-  #b_add_to_cart {
-      position:absolute;
-    left:50%;
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #FFAD5C;
+
+    form, div {
+      display: inline;
+    }
+    input {
+      font-size: small;
+    }
+    #cart {
+      font-size: smaller;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          font-size: small;
+        }
+      }
+    }
   }
+}
+
+//#START:form
+.depot_form {
+  fieldset {
+    background: #efe;
+    legend {
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+    br {
+      display: none
+    }
+  }
+}
+//#END:form
+
+

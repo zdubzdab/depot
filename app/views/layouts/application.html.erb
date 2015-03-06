@@ -9,7 +9,6 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <%= render 'layouts/header' %>
-
   <div id="columns">
     <div id="side">
       <% if @cart %>
@@ -32,5 +31,6 @@
       <%= yield %>
     </div>
   </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>
