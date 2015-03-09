@@ -1,0 +1,77 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcome {
+  background: white;
+  position:relative; 
+  left: 20%;
+  padding-top: -5px;
+  padding-right: -55px;
+  margin-bottom: 15px;
+}
+#white {
+  background: white;
+  padding-top: 680px;
+  position:absolute; 
+    left: -5%;
+    top: 6.8%;
+}
+.button_left { 
+    line-height:250px;
+    margin-left: 20%;
+    font-family: Arial; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-size: 22px; 
+    color: White; 
+  /* border-style:solid;*/ 
+    background: orange; 
+    border: White; 
+    border-color: White White White White; 
+    border-bottom: 1px; 
+    border-top: 1px; 
+    border-left: 1px; 
+    border-right: 1px;  
+    border-style:solid; 
+    size: 20px; 
+    align: center;  
+    height: 150px;  
+    width: 950px;
+    background: orange;
+    position:relative; 
+    left:-25%;
+    padding-bottom: 250px;
+    padding-left: 200px;
+    padding-right: 200px;
+  } 
+
+  .button_right { 
+    line-height:50px;
+    margin-left: 20%;
+    font-family: Arial; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-size: 22px; 
+    font-color: White;
+    color: White; 
+  /* border-style:solid;*/ 
+    background: green; 
+    border: White; 
+    border-color: White White White White; 
+    border-bottom: 1px; 
+    border-top: 1px; 
+    border-left: 1px; 
+    border-right: 1px;  
+    border-style:solid; 
+    size: 20px; 
+    align: center;  
+    height: 250px;  
+    width: 450px;
+    position:relative; 
+      left:16.5%;
+    margin-bottom: 55px;
+    margin-top: -2%;
+    padding-left: 200px;
+    padding-right: 200px;
+  } 

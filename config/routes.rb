@@ -1,4 +1,5 @@
 Depot::Application.routes.draw do
+  get "persons/profile", as: 'user_root'
   devise_for :users
   resources :orders
 
@@ -9,6 +10,5 @@ Depot::Application.routes.draw do
   get "store/index"
   resources :products
 
-  root to: 'store#index', as: 'store'
-
+  root to: 'welcome#index'
 end

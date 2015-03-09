@@ -9,12 +9,13 @@
   }
 
   .list_image {
-    width:  60px;
-    height: 70px;
+    margin-right: 20px;
+    width:  80px;
+    height: 80px;
   }
 
   .list_description {
-    width: 60%;
+    width: 600px;
 
     dl {
       margin: 0;
@@ -32,7 +33,8 @@
   }
 
   .list_actions {
-    font-size:    x-small;
+    width: 200px;
+    font-size:    default;
     text-align:   right;
     padding-left: 1em;
   }
@@ -42,6 +44,6 @@
   }
 
   .list_line_odd {
-    background:   #f8b0f8;
+    background:   #FFC68D;
   }
 }

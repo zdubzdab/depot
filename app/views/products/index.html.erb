@@ -1,5 +1,5 @@
-<h1>Listing products</h1>
-
+<%= link_to 'Add new product', new_product_path %>
+<h3>Listing products</h3>
 <table>
 <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -12,7 +12,7 @@
       <dl>
         <dt><%= product.title %></dt>
         <dd><%= truncate(strip_tags(product.description),
-               length: 80) %></dd>
+               length: 180) %></dd>
       </dl>
     </td>
 
@@ -25,7 +25,5 @@
   </tr>
 <% end %>
 </table>
+<br>
 
-<br />
-
-<%= link_to 'New product', new_product_path %>

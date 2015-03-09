@@ -1,10 +1,17 @@
 <header class="navbar navbar navbar-custom">
   <div class="navbar-inner"> 
-    <%= link_to image_tag("logo.jpg", border: 0, size: "60x100"), {action: 'index', controller: 'store'}, class: 'main_img' %>
-    <ul class="nav pull-right">
 
-      <li><%= link_to 'Users', "#"%></li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="nav pull-right">
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'Users', "#"%></li>
+      </ul>
+    <% else %>
+      <ul class="nav pull-right">
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <li><%= link_to 'Users', "#"%></li>
+      </ul>
+    <% end %>
   </div>
 </header>
 
