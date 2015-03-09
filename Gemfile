@@ -41,10 +41,12 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 
 #heroku
-group :development, :test do 
-  gem 'sqlite3'
-end
+  gem 'sqlite3', :group => [:development, :test]
+    group :production do
+      gem 'thin' 
+      gem 'pg' 
+    end
 
-gem 'pg'
+
 
 
