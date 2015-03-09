@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
@@ -44,8 +41,10 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 
 #heroku
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+group :development, :test do 
+  gem 'sqlite3'
 end
+
+gem 'pg'
+
 
