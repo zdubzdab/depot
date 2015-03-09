@@ -41,8 +41,9 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 
 #heroku
+group :development, :production do
   gem 'pg'
-
+end
 
 
 
