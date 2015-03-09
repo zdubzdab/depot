@@ -42,3 +42,9 @@ gem 'devise'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+
+#heroku
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor'
+end
