@@ -1,15 +1,14 @@
 <header class="navbar navbar navbar-custom">
   <div class="navbar-inner"> 
-
+    <%= link_to "Depot", root_path, id: "logo" %>
     <% if user_signed_in? %>
       <ul class="nav pull-right">
-        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'Users', "#"%></li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>        
       </ul>
     <% else %>
       <ul class="nav pull-right">
+        <li><%= link_to 'Log in', new_user_session_path %></li>
         <li><%= link_to 'Sign up', new_user_registration_path %></li>
-        <li><%= link_to 'Users', "#"%></li>
       </ul>
     <% end %>
   </div>
