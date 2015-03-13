@@ -9,15 +9,7 @@
 </head>
 <body class="<%= controller.controller_name %>">
   <%= render 'layouts/header' %>
-  <div id="columns">
-    <div id="side">
-      <% if @cart %>
-        <div id="cart">
-          <%= render @cart %>
-        </div>
-      <% end %>
 
-    </div>
     <div id="main">
       <div id="flash">
         <p class="notice"><%= notice %></p>

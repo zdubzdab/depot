@@ -8,7 +8,8 @@ Depot::Application.routes.draw do
   resources :carts
 
   get "store/index"
-  resources :products
+  resources :products 
+    match 'persons/profile', to: 'persons#profile', via:  [:post, :get]
 
   root to: 'welcome#index'
 end

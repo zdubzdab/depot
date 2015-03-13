@@ -16,22 +16,17 @@
 </p>
 
 <p>
-  <strong>Pay type:</strong>
-  <%= @order.pay_type %>
-</p>
-
-<p>
-  <strong>Pay type:</strong>
-<%= render(@order.line_items) %>
+  <strong>Phone:</strong>
+  <%= @order.phone %>
 </p>
 
 <% @order.line_items.each do |line_item| %>
     <ol class="list">
-      <b><%= line_item.product.title %> - <%= line_item.product.price %></b>
+      <b><%= line_item.product.title %> - <%= line_item.product.price %> - <%= link_to 'Destroy', line_item_path(line_item), method: :delete, data: { confirm: 'Are you sure?' } %></b>
      
       <br>
     </ol>
     <% end %>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', persons_profile_path %>

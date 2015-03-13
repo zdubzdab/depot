@@ -1,6 +1,7 @@
 class PersonsController < ApplicationController
   
   def profile
+    @products = current_user.products.order("created_at DESC")
   end
 
   private

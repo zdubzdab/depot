@@ -1,0 +1,22 @@
+
+  <table id="user_table", class="table table-bordered table-condensed table-striped">
+    <tr>
+      <th style="width: 17%">Ava</th>
+      <th style="width: 8%">Name</th>
+      <th style="width: 8%">Show</th>
+      <th style="width: 8%">Edit</th>
+      <th style="width: 8%">Destroy</th>
+    </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= image_tag product.image_url %></td>
+<!--       <%= image_tag(product.image_url, class: 'list_image') %> -->
+      <td><%= product.title %></td>
+
+      <td><%= link_to 'Show', product_path(product) %></td>
+      <td><%= link_to 'Edit', edit_product_path(product), class: 'editarticle_table' %></td>
+     <td><%= link_to 'Destroy', product, method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>

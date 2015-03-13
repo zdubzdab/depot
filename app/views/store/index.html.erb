@@ -1,4 +1,14 @@
-<h1>Your Pragmatic Catalog</h1>
+  <div id="columns">
+    <div id="side">
+      <% if @cart %>
+        <div id="cart">
+          <%= render @cart %>
+        </div>
+      <% end %>
+
+    </div>
+    <div id="main">
+<h1>Books Catalog</h1>
 
 <% @products.each do |product| %>
   <div class="entry">
@@ -12,3 +22,4 @@
   </div>
 <% end %>
 
+</div>
