@@ -65,7 +65,14 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1
   # DELETE /orders/1.json
-  def destroy
+  # def destroy
+  #   @line_item = LineItem.find(params[:id])
+  #       @line_item.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to persons_profile_path }
+  #     format.js
+  #     format.json { head :no_content }
+  #   end
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url }

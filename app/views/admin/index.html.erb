@@ -1,0 +1,16 @@
+<h3>Admin#index</h3>
+  <table class="table table-bordered table-condensed table-striped">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>User lineitems</th>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.products.to_a %></td>
+    </tr>
+  <% end %>
+  </table>
+  

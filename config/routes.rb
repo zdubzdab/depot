@@ -1,8 +1,9 @@
 Depot::Application.routes.draw do
+  get "admin/index"
   get "persons/profile", as: 'user_root'
   devise_for :users
-  resources :orders
-
+  resources :orders 
+    match 'orders/:id', to: 'line_items#destroy', via:  [:delete]
   resources :line_items
 
   resources :carts

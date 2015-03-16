@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create]
-  before_action :set_line_item, only: [:show, :edit, :update]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
   # GET /line_items.json
@@ -61,7 +61,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_path }
+      format.html { redirect_to persons_profile_path }
       format.js
       format.json { head :no_content }
     end

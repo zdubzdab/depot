@@ -21,8 +21,10 @@
 </p>
 
 <% @order.line_items.each do |line_item| %>
-    <ol class="list">
-      <b><%= line_item.product.title %> - <%= line_item.product.price %> - <%= link_to 'Destroy', line_item_path(line_item), method: :delete, data: { confirm: 'Are you sure?' } %></b>
+<ol class="list">
+<b><%= line_item.product.title %> - 
+  <%= line_item.product.price %> - 
+  <%= link_to 'Destroy', order_path, method: :delete %></b>
      
       <br>
     </ol>
