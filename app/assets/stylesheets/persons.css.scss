@@ -1,15 +1,15 @@
 // Place all the styles related to the persons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#profile {
-    position:relative; 
-  left: 20%;
-}
 
+#profile {
+  position:relative; 
+    left: 20%;
+}
 #profile_panel {
   position:relative; 
     left: -2.3%;
-  margin-top: -2%;
+  margin-top: -9px;
   padding-left: 50px;
   background: #FFAD5C;
 }
@@ -19,12 +19,34 @@
   bottom: -180px;
   }
 #products_panel {
+  margin-top: 10px;
   padding-left: 150px;
   position:relative; 
-    top: -100px;
-    left: -5%;
+    top: -170px;
+    left: 18%;
   text-align: center;
 }
+#button_show_orders {
+  position:relative; 
+    left: -20%;
+  padding: 8px 117px;
+  background: #FF8533;
+  color: black;
+}
+#button_show_orders:hover {
+  background-color: #94BFE9;
+}
 
-
-
+#button_add_product {
+  width:130px;
+  height:40px;
+  background: green;
+}
+#button_add_product:hover {
+  background-color: orange;
+}
+#orders_panel {
+  position:relative; 
+  left: 40%;
+  bottom: -10px;
+}

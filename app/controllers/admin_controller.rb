@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def index
-     # @users = User.preload(:line_items).where("users.name='eee'")
+     # @users = User.includes(:line_items).where("line_items.id='61'")
      @users = User.all
   end
 end

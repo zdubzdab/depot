@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource except: :create #cancan
 
   # GET /products
   # GET /products.json

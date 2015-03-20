@@ -1,16 +1,17 @@
 Depot::Application.routes.draw do
   get "admin/index"
+  get "store/index"
   get "persons/profile", as: 'user_root'
+  match 'persons/profile', to: 'persons#profile', via:  [:post, :get]
+
   devise_for :users
   resources :orders 
-    match 'orders/:id', to: 'line_items#destroy', via:  [:delete]
+
   resources :line_items
 
   resources :carts
 
-  get "store/index"
   resources :products 
-    match 'persons/profile', to: 'persons#profile', via:  [:post, :get]
 
   root to: 'welcome#index'
 end

@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :phone, :password, :password_confirmation, :current_password) }
   end
 
+      # Catch all CanCan errors and alert the user of the exception
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to product_path, alert: "This product is not your property"
+  end
+
 end

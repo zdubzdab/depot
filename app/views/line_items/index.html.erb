@@ -1,29 +1,34 @@
-<h1>Listing line_items</h1>
-
-<table>
+<div class="span10" id="listing_orders">
+<h4>Listing orders</h4>
+<table id="article_table" class="table table-bordered table-condensed table-striped">
   <thead>
     <tr>
-      <th>Product</th>
-      <th>Cart</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th style="width: 5%">Orders name</th>
+      <th style="width: 5%">Show order</th>
+      <th style="width: 5%">Title of book</th>
+      <th style="width: 5%">Price</th>
+      <th style="width: 5%">Orders status</th>
+      <th style="width: 5%">Change status</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @line_items.each do |line_item| %>
+    <% current_user.line_items.each do |line_item| %>
       <tr>
-        <td><%= line_item.product %></td>
-        <td><%= line_item.cart %></td>
-        <td><%= link_to 'Show', line_item %></td>
-        <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
-        <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= line_item.order.try(&:name) %></td>
+        <td><%= link_to 'Show order', line_item.order %></td>
+        <td><%= line_item.product.try(&:title) %></td>
+        <td><%= line_item.product.try(&:price) %></td>
+        <td><%= line_item.status %></td>
+        <td><%= link_to 'Change status', edit_line_item_path(line_item) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
+<div class="span8">
+  <%= link_to 'Back', persons_profile_path, class: "link" %>
+</div>
 
-<%= link_to 'New Line item', new_line_item_path %>
+

@@ -1,34 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="span12" id="info_order">
+  <p>
+    <strong>Order name:</strong>
+    <%= @order.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
+  <p>
+    <strong>Address:</strong>
+    <%= @order.address %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @order.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @order.phone %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @order.phone %>
-</p>
-
-<% @order.line_items.each do |line_item| %>
-<ol class="list">
-<b><%= line_item.product.title %> - 
-  <%= line_item.product.price %> - 
-  <%= link_to 'Destroy', order_path, method: :delete %></b>
-     
-      <br>
-    </ol>
+  <div class="span4" id="info_order_table">
+    <h4>Products listing</h4>
+    <table id="article_table" class="table table-bordered table-condensed table-striped">
+      <tr>
+        <th style="width: 2%">№</th>
+        <th style="width: 5%">Title</th>
+        <th style="width: 5%">Price</th>
+      </tr>
+    <% @order.line_items.each do |line_item| %>
+      <tr>
+        <ol>
+          <td><li></li></td>
+          <td><%= line_item.product.title %></td> 
+          <td><%= line_item.product.price %></td>
+        </ol>
+      </tr>
     <% end %>
+    </table>
+  </div>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', persons_profile_path %>
+  <div class="span8">
+    <%= link_to 'Edit', edit_order_path(@order), class: "link" %> |
+    <%= link_to 'Back', persons_profile_path, class: "link" %>
+  </div>
+</div>

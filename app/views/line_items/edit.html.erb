@@ -1,6 +1,25 @@
-<h1>Editing line_item</h1>
+<h3>Editing line_item</h3>
 
-<%= render 'form' %>
+<%= form_for(@line_item) do |f| %>
+  <% if @line_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@line_item.errors.count, "error") %> prohibited this line_item from being saved:</h2>
+      <ul>
+      <% @line_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select(:status, options_for_select([["new"],["in process"],["complited"]]))  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @line_item %> |
-<%= link_to 'Back', line_items_path %>
+<%= link_to 'Back', persons_profile_path %>

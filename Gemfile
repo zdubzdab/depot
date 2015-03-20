@@ -45,6 +45,8 @@ group :development, :production do
   gem 'pg'
 end
 
+gem "cancan"
+
 
 
 

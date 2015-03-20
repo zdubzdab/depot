@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div clas="span8" id="product_text">
+  <%= image_tag(@product.image_url) %><br><br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @product.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+  <p>
+    <strong>Image url:</strong>
+    <%= @product.image_url %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', persons_profile_path %>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_product_path(@product), class: "link" %> |
+    <%= link_to 'Back', persons_profile_path, class: "link" %>
+  <% else %>
+    <%= link_to 'Back', store_index_path, class: "link" %>
+  <% end %>
+
+

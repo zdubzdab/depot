@@ -6,34 +6,30 @@
 </div>
 
 <div class="span3" id="left_text">
-  <% if current_user.orders.any? %>
-    <p class="p">I have <%= current_user.orders.count %> orders</p><br>
-  <% else %>
-    <p class="p">I have 0 orders</p><br>
-  <% end %>
-
   <% if current_user.products.any? %>
     <p class="p">I have <%= current_user.products.count %> products</p><br>
   <% else %>
     <p class="p">I have 0 products</p><br>
   <% end %>
+
+  <% if current_user.orders.any? %>
+    <p class="p">I have <%= current_user.line_items.count %> orders</p>
+    <p class="p"><%= new_orders (current_user.line_items.to_a) %> of which are new.</p><br>
+  <% else %>
+    <p class="p">I have 0 orders</p>
+    <p class="p"> 0 of which are new.</p><br><br>
+  <% end %>
+
+  <%= button_to " Show orders", line_items_path, method: :get, class: "btn btn-warning", id: "button_show_orders" %>
+</div>
+
+<div class="span4" id="orders_panel">
+  <%= button_to 'Add new product', new_product_path, method: :get, class: "btn btn-warning", id: "button_add_product" %>
 </div>
 
 <div class="span8" id="products_panel">
   <h3>Listing Products</h3>
   <%= render 'products/products' %>
-
-  <%= link_to 'Add new product', new_product_path %>
 </div>
 
-<div class="span8" id="orders_panel">
-  <% if current_user.orders.any? %>
-  <h4>Orders:</h4>
-    <% current_user.orders.each do |order| %>
-      <ol class="list">
-        <b><%= link_to (order.name), order_path(order) %></b> (ordered <%= time_ago_in_words(order.created_at) %> ago)
-      </ol>
-    <% end %>
-  <% end %>
-</div>
 

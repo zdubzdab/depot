@@ -6,13 +6,13 @@ body {
    }
 
 header {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
     .navbar-inner {
+        margin-bottom: -10px;
         background: #FF8533;
         font-weight: bold;
           .nav > li {
             font-size: 20px;
-            color: orange;
             padding-top: 10px;
           }
     }
@@ -42,16 +42,11 @@ header {
    font-weight: bold;
    color: #0071B5;
    background: #fcf8e3;
-   margin-bottom: -5px;
+   margin-bottom: -12px;
+   margin-top: 0px;
+   position:relative;
+     bottom: 15px;
  }
-  .alert {
-   text-align: center;
-   font-weight: bold;
-   color: #FF6600 !important;
-   background: #FFFFFF !important;
-   border: #FFFFFF !important;
-      margin-bottom: -5px;
-  }
 
 footer {
   margin-top: 10px;
@@ -74,7 +69,6 @@ footer {
     padding: 1em;
     background: white;
   }
-
   #side {
     float: left;
     padding: 1em 2em;
@@ -89,6 +83,8 @@ footer {
     }
     #cart {
       font-size: smaller;
+      position:relative;
+        left:7%;
 
       table {
         border-top:    1px dotted #595;
@@ -96,45 +92,8 @@ footer {
         margin-bottom: 10px;
       }
     }
-
-
   }
 }
-
-//#START:form
-.depot_form {
-  fieldset {
-    background: #efe;
-    legend {
-      color: #dfd;
-      background: #141;
-      font-family: sans-serif;
-      padding: 0.2em 1em;
-    }
-  }
-  form {
-    label {
-      width: 5em;
-      float: left;
-      text-align: right;
-      padding-top: 0.2em;
-      margin-right: 0.1em;
-      display: block;
-    }
-
-    select, textarea, input {
-      margin-left: 0.5em;
-    }
-
-    .submit {
-      margin-left: 4em;
-    }
-    br {
-      display: none
-    }
-  }
-}
-//#END:form
 
 .link {
   font-size: 16px;

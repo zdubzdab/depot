@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
   end
 
   # GET /orders/new
@@ -42,7 +43,6 @@ class OrdersController < ApplicationController
             'Thank you for your order.' }
         format.json { render action: 'show', status: :created, location: @order }
       else
-        
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -73,6 +73,7 @@ class OrdersController < ApplicationController
   #     format.js
   #     format.json { head :no_content }
   #   end
+  def destroy
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url }

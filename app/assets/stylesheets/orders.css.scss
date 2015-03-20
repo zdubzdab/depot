@@ -1,3 +1,60 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#info_order p {
+  font-size: 16px;
+}
+
+#info_order_table {
+  position:relative; 
+    left: 18%;
+    bottom: 150px;
+  text-align: center;
+}
+
+#info_order ol {
+    counter-reset:  item;
+   }
+#info_order li {
+     list-style-type: none;
+ }
+#info_order li:before {
+    content: counter(item) ;
+    counter-increment: item;
+   }
+
+
+.depot_form {
+  fieldset {
+  margin-top: -21px;
+    background: #fcf8e3;
+    legend {
+      color: grey;
+      background: #FFAD5C;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+    br {
+      display: none
+    }
+  }
+}
