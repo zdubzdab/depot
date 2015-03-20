@@ -7,10 +7,14 @@
   margin-top: 20px;
 }
 
+#info_order  {
+  margin-top: 25px;
+}
+
 #info_order_table {
   position:relative; 
-    left: 18%;
-    bottom: 160px;
+    left: 20%;
+    bottom: 180px;
   text-align: center;
 }
 
@@ -24,7 +28,10 @@
     content: counter(item) ;
     counter-increment: item;
    }
-
+#b_back_from_order {
+  position:relative; 
+    left: -30px;
+}
 
 .depot_form {
   fieldset {
