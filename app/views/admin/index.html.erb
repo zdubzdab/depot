@@ -3,12 +3,16 @@
     <tr>
       <th>Id</th>
       <th>Name</th>
-      <th>User lineitems</th>
+      <th>Email</th>
+      <th>User products</th>
+      <th>User line_items</th>
     </tr>
   <% @users.each do |user| %>
     <tr>
       <td><%= user.id %></td>
       <td><%= user.name %></td>
+      <td><%= user.email %></td>
+
       <td><%= user.products.to_a %></td>
       <td><%= user.line_items.to_a %></td>
     </tr>

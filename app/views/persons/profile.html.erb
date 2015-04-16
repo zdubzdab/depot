@@ -14,7 +14,7 @@
 
   <% if current_user.orders.any? %>
     <p class="p">I have <%= current_user.line_items.count %> orders</p>
-    <p class="p"><%= new_orders (current_user.line_items.to_a) %> of which are new.</p><br>
+    <p class="p"><%= new_orders (current_user.line_items) %> of which are new.</p><br>
   <% else %>
     <p class="p">I have 0 orders</p>
     <p class="p"> 0 of which are new.</p><br><br>
@@ -31,5 +31,7 @@
   <h3>Listing Products</h3>
   <%= render 'products/products' %>
 </div>
+
+
 
 
