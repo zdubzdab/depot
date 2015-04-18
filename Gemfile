@@ -31,6 +31,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
+  gem 'spork', github: 'sporkrb/spork'
   gem 'spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
@@ -39,6 +40,7 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'libnotify'
 end
 
 

@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/sporkrb/spork.git
+  revision: 224df492657e617a0c93c0319e78f0eefee5b636
+  specs:
+    spork (1.0.0rc4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -101,6 +107,8 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
+    libnotify (0.9.1)
+      ffi (>= 1.0.11)
     libv8 (3.16.14.7)
     listen (2.10.0)
       celluloid (~> 0.16.0)
@@ -192,7 +200,6 @@ GEM
       websocket (~> 1.0)
     shellany (0.0.1)
     slop (3.6.0)
-    spork (1.0.0rc4)
     spork-rails (4.0.0)
       rails (>= 3.0.0, < 5)
       spork (>= 1.0rc0)
@@ -253,12 +260,14 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   less-rails
+  libnotify
   pg
   rails (= 4.0.2)
   rspec-rails
   sass-rails
   sdoc
   selenium-webdriver
+  spork!
   spork-rails
   therubyracer
   turbolinks
