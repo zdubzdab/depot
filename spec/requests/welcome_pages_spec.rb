@@ -35,7 +35,9 @@ require 'rails_helper'
     end
 
     describe "for signed-in users" do
+      before { visit new_user_session_path }
       let(:user) { FactoryGirl.create(:user) }
+      before { valid_signin(user) }
       before { visit root_path }
 
       it { should have_content('Welcome to DEPOT') }
@@ -45,22 +47,22 @@ require 'rails_helper'
       it { should have_button('BUY') }
 
       describe "check links" do
+
         it "should have the right links on the layout" do
 
         visit root_path
-        # click_link "Depot"
-        # expect(page).to have_content("Welcome to DEPOT")
-        # click_link "Log in"
-        # expect(page).to have_content("Log in")
-        # visit root_path
-        # click_link "Sign up"
-        # expect(page).to have_content("Sign up")
-        # visit root_path
-        # find(:button, "SELL").click
-        # expect(page).to have_content("Sign")
-        # visit root_path
-        # find(:button, "BUY").click
-        # expect(page).to have_content("Books Catalog")
+        click_link "Depot"
+        expect(page).to have_content("Welcome to DEPOT")
+        visit root_path
+        find(:button, "SELL").click
+        expect(page).to have_content("Listing Products")
+        expect(page).to have_link("Edit my profile")
+        visit root_path
+        find(:button, "BUY").click
+        expect(page).to have_content("Books Catalog")
+        click_link "Sign out"
+        expect(page).to have_link("Log in")
+        expect(page).not_to have_link("Sign out")
         end
       end
     end

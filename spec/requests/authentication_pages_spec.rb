@@ -50,20 +50,21 @@ describe "Authentication pages" do
 
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
-      before do
-        fill_in "Email",    with: user.email.upcase
-        fill_in "Password", with: user.password
-        click_button "Log in"
-      end
+      before { valid_signin(user) }
 
+      it { should have_link("Sign out") }
       it { should have_selector('h3', text: "Listing Products") }
       it { should have_content(user.name) }
-      it { should have_content(user.email) }
-      it { should have_content(user.phone) }
-      it { should have_link("Sign out") }
-      it { should have_link("Edit my profile") }
-      it { should have_button("Add new product") }
-      it { should have_button("Show orders") }
+      # it { should have_content(user.email) }
+      # it { should have_content(user.phone) }
+      # it { should have_link("Edit my profile") }
+      # it { should have_button("Add new product") }
+      # it { should have_button("Show orders") }
+
+      describe "followed by signout" do
+        before { click_link "Sign out" }
+        it { should have_link('Log in') }
+      end
     end
   end
 end
