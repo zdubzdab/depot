@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 
@@ -14,6 +15,7 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem "cancan"
+gem 'faker'
 
 group :doc do
   gem 'sdoc', require: false
@@ -41,6 +43,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'libnotify'
+  gem 'factory_girl_rails'
 end
 
 
