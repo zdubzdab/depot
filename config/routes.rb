@@ -7,8 +7,11 @@ Depot::Application.routes.draw do
   devise_for :users
   resources :orders 
 
-  resources :line_items
-
+  resources 'line_items' do
+    collection do
+      get 'fresh'
+    end
+  end
   resources :carts
 
   resources :products 

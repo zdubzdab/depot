@@ -6,6 +6,13 @@ class User < ActiveRecord::Base
   validates :name, presence: true,
                     length: { minimum: 3 },
                     uniqueness: true
+  validates :email, presence: true,
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
+                    message: "correct email format: xxx@xxx.xxx" } ,
+                    uniqueness: true
+  validates :phone, presence: true,
+                    numericality: true,
+                    uniqueness: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

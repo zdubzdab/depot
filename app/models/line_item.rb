@@ -8,4 +8,6 @@ class LineItem < ActiveRecord::Base
     product.price
   end
 
+  scope :needle_id, ->(i) { where("line_items.id = ?", i) }
+
 end

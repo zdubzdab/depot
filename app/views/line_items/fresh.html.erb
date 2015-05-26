@@ -1,0 +1,35 @@
+<div class="span10" id="listing_orders">
+<h4>Listing orders</h4>
+<table id="article_table" class="table table-bordered table-condensed table-striped">
+  <thead>
+    <tr>
+      <th style="width: 5%">Orders name</th>
+      <th style="width: 5%">Show order</th>
+      <th style="width: 5%">Title of book</th>
+      <th style="width: 5%">Price</th>
+      <th style="width: 5%">Orders status</th>
+      <th style="width: 5%">Change status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.line_items.needle_id(73).each do |line_item| %>
+      <tr>
+        <td><%= line_item.order.try(&:name) %></td>
+        <td><%= link_to 'Show order', line_item.order %></td>
+        <td><%= line_item.product.try(&:title) %></td>
+        <td><%= line_item.product.try(&:price) %></td>
+        <td><%= line_item.status %></td>
+        <td><%= link_to 'Change status', edit_line_item_path(line_item) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="span8">
+  <%= link_to 'Back', persons_profile_path, class: "link" %>
+</div>
+
+
+<%= console %>

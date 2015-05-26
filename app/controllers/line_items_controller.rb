@@ -7,6 +7,11 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
+    # @line_items = LineItem.includes(:orders).where("orders.name='new'").references(:orders)
+    @line_items = LineItem.all.order("created_at")
+  end
+
+  def fresh
     # @line_items = current_user.line_items.where("line_items.id='1'")
     @line_items = LineItem.all.order("created_at")
   end
