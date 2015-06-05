@@ -3,8 +3,6 @@ FactoryGirl.define do
     name     "Michael"
     address  "Lviv"
     email    "michael@example.com"
-    phone    "0352530099"
-    status   "new"
+    phone    "550099"
   end
-
 end

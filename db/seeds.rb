@@ -22,11 +22,9 @@ Product.create!(
   user_id: User.first.id,
   title: 'Programming Ruby 1.9',
   description:
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
-        out there. If you need to get working programs delivered fast,
-        you should add Ruby to your toolbox.
-      </p>},
+          %{ Ruby is the fastest growing and most exciting dynamic language
+              out there. If you need to get working programs delivered fast,
+              you should add Ruby to your toolbox. },
   image_url: 'ruby.jpg',
   price: 49.95)
 
@@ -34,13 +32,11 @@ Product.create!(
   user_id: User.first.id,
   title: 'CoffeeScript',
   description:
-    %{<p>
-        CoffeeScript is JavaScript done right. It provides all of JavaScript's
-      functionality wrapped in a cleaner, more succinct syntax. In the first
-      book on this exciting new language, CoffeeScript guru Trevor Burnham
-      shows you how to hold onto all the power and flexibility of JavaScript
-      while writing clearer, cleaner, and safer code.
-      </p>},
+    %{  CoffeeScript is JavaScript done right. It provides all of JavaScript's
+        functionality wrapped in a cleaner, more succinct syntax. In the first
+        book on this exciting new language, CoffeeScript guru Trevor Burnham
+        shows you how to hold onto all the power and flexibility of JavaScript
+        while writing clearer, cleaner, and safer code. },
   image_url:   'rtp.jpg',
   price: 36.00)
 

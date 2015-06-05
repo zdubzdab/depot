@@ -17,8 +17,8 @@
         <div class="price_line">
           <span class="price"><%= sprintf("$%0.02f", product.price) %></span>
           <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true, class: "btn btn-warning", id: "b_add_to_cart" %>
-          <%= button_to 'Show', product_path(product), class: "btn btn-warning", id: "button_show_product", method: :get %>
-        </div>
+<!--       button_to 'Show', product_path(product), class: "btn btn-warning", id: "button_show_product", method: :get 
+ -->        </div>
       </div>
     <% end %>
 </div>

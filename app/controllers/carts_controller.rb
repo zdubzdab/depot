@@ -28,7 +28,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to store_url }
+        format.html { redirect_to store_index_path }
         format.json { render action: 'show', status: :created, location: @cart }
       else
         format.html { render action: 'new' }
@@ -57,7 +57,7 @@ class CartsController < ApplicationController
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to store_url }
+      format.html { redirect_to store_index_path }
       format.js 
       format.json { head :no_content }
     end

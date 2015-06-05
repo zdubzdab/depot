@@ -14,8 +14,7 @@ require 'rails_helper'
       it { should have_button('SELL') }
       it { should have_button('BUY') }
 
-      describe "check links" do
-        it "should have the right links on the layout" do
+      it "should have the right links on the layout" do
         visit root_path
         click_link "Depot"
         expect(page).to have_content("Welcome to DEPOT")
@@ -30,7 +29,6 @@ require 'rails_helper'
         visit root_path
         find(:button, "BUY").click
         expect(page).to have_content("Books Catalog")
-        end
       end
     end
 
@@ -41,15 +39,9 @@ require 'rails_helper'
       before { visit root_path }
 
       it { should have_content('Welcome to DEPOT') }
-      it { should have_link('Depot') }
       it { should have_link('Sign out') }
-      it { should have_button('SELL') }
-      it { should have_button('BUY') }
 
-      describe "check links" do
-
-        it "should have the right links on the layout" do
-
+      it "should have the right links on the layout" do
         visit root_path
         click_link "Depot"
         expect(page).to have_content("Welcome to DEPOT")
@@ -63,7 +55,6 @@ require 'rails_helper'
         click_link "Sign out"
         expect(page).to have_link("Log in")
         expect(page).not_to have_link("Sign out")
-        end
       end
     end
   end

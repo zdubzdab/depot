@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th style="width: 5%">Orders name</th>
-      <th style="width: 5%">Show order</th>
+      <th style="width: 5%">Details</th>
       <th style="width: 5%">Title of book</th>
       <th style="width: 5%">Price</th>
       <th style="width: 5%">Orders status</th>
@@ -16,7 +16,7 @@
     <% current_user.line_items.each do |line_item| %>
       <tr>
         <td><%= line_item.order.try(&:name) %></td>
-        <td><%= link_to 'Show order', line_item.order %></td>
+        <td><%= link_to 'Details', line_item.order %></td>
         <td><%= line_item.product.try(&:title) %></td>
         <td><%= line_item.product.try(&:price) %></td>
         <td><%= line_item.status %></td>

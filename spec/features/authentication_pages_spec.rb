@@ -4,7 +4,7 @@ describe "Authentication pages" do
 
   subject { page }
 
-  describe "signup page" do
+  describe "signup" do
 
     before { visit new_user_registration_path }
 
@@ -21,8 +21,8 @@ describe "Authentication pages" do
         fill_in "Name",                   with: "Example User"
         fill_in "Email",                  with: "user@example.com"
         fill_in "Phone",                  with: "530099"
-        fill_in "Password",               with: "foobarrr"
-        fill_in "Password confirmation",  with: "foobarrr"
+        fill_in "Password",               with: "password"
+        fill_in "Password confirmation",  with: "password"
       end
 
       it "should create a user" do
@@ -39,13 +39,13 @@ describe "Authentication pages" do
     end
   end
 
-  describe "log in page" do
+  describe "log in" do
     before { visit new_user_session_path }
 
     describe "with invalid information" do
       before { click_button "Log in" }
 
-    it { should have_content('Log in') }
+      it { should have_content('Log in') }
     end
 
     describe "with valid information" do
@@ -55,11 +55,6 @@ describe "Authentication pages" do
       it { should have_link("Sign out") }
       it { should have_selector('h3', text: "Listing Products") }
       it { should have_content(user.name) }
-      # it { should have_content(user.email) }
-      # it { should have_content(user.phone) }
-      # it { should have_link("Edit my profile") }
-      # it { should have_button("Add new product") }
-      # it { should have_button("Show orders") }
 
       describe "followed by signout" do
         before { click_link "Sign out" }
