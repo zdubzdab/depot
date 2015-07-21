@@ -1,37 +1,35 @@
-<div class="span3" id="profile_panel">
-  <h4>My name: <%= current_user.name %></h4>
-  <h4>My email: <%= current_user.email %></h4>
-  <h4>My phone: <%= current_user.phone %></h4><br>
-  <%= link_to 'Edit my profile', edit_user_registration_path, class: "link" %><br><br>
-</div>
+<aside class="span3">
+  <div id="profile_panel">
+    <h4>My name: <%= current_user.name %></h4>
+    <h4>My email: <%= current_user.email %></h4>
+    <h4>My phone: <%= current_user.phone %></h4><br>
+    <%= link_to 'Edit my profile', edit_user_registration_path, class: "link" %><br><br>
+  </div>
+  <div id="left_text">
+    <% if current_user.products.any? %>
+      <p class="p">I have <%= current_user.products.count %> products</p><br>
+    <% else %>
+      <p class="p">I have 0 products</p><br>
+    <% end %>
 
-<div class="span3" id="left_text">
-  <% if current_user.products.any? %>
-    <p class="p">I have <%= current_user.products.count %> products</p><br>
-  <% else %>
-    <p class="p">I have 0 products</p><br>
-  <% end %>
+    <% if current_user.orders.any? %>
+      <p class="p">I have <%= current_user.line_items.count %> orders</p>
+      <p class="p"><%= new_orders (current_user.line_items) %> of which are new.</p><br>
+    <% else %>
+      <p class="p">I have 0 orders</p>
+      <p class="p"> 0 of which are new.</p><br><br>
+    <% end %>
+    <%= button_to " Show orders", line_items_path, method: :get, class: "btn btn-warning", id: "button_show_orders" %>
+  </div>
+</aside>
 
-  <% if current_user.orders.any? %>
-    <p class="p">I have <%= current_user.line_items.count %> orders</p>
-    <p class="p"><%= new_orders (current_user.line_items) %> of which are new.</p><br>
-  <% else %>
-    <p class="p">I have 0 orders</p>
-    <p class="p"> 0 of which are new.</p><br><br>
-  <% end %>
-
-  <%= button_to " Show orders", line_items_path, method: :get, class: "btn btn-warning", id: "button_show_orders" %>
-<!--     button_to " Show new orders", fresh_line_items_path, method: :get, class: "btn btn-warning", id: "button_show_orders" -->
-</div>
-
-<div class="span4" id="orders_panel">
+<section>
   <%= button_to 'Add new product', new_product_path, method: :get, class: "btn btn-warning", id: "button_add_product" %>
-</div>
-
-<div class="span8" id="products_panel">
-  <h3>Listing Products</h3>
-  <%= render 'products/products' %>
-</div>
+  <div class="span10" id="products_panel">
+    <h3>Listing Products</h3>
+    <%= render 'products/products' %>
+  </div>
+</section>
 
 
 
